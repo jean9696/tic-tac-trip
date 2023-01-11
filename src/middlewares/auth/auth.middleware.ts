@@ -7,7 +7,7 @@ export const authMiddleware: Koa.Middleware = async (ctx, next) => {
     throw new ServiceError(401, 'Unauthorized')
   }
   try {
-    await authDriver.isAuthenticated(ctx.request.token)
+    ctx.user = await authDriver.getTokenUser(ctx.request.token)
   } catch (err) {
     throw new ServiceError(401, 'Unauthorized')
   }

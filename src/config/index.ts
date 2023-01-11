@@ -14,4 +14,10 @@ export const config = convict({
       default: 'tic-tac-trip',
     },
   },
+  justify: {
+    rateLimitByDay: {
+      doc: 'The number of words allowed per day',
+      default: 80_000,
+    },
+  },
 })

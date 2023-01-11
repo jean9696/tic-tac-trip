@@ -1,10 +1,10 @@
-// TODO: migrate this to use a shared system between servince instances like redis
+// TODO: migrate this to use a shared system between service instances like redis
 import { config } from '#@/config'
 import jwt from 'jsonwebtoken'
 
 interface User {
-  usedWords: number
-  lastCallAt: Date
+  lastJustifyCall?: Date
+  usedJustifiedWords?: number
 }
 
 class AuthDriver {
@@ -18,23 +18,24 @@ class AuthDriver {
     if (this.#users.has(email)) {
       return
     }
-    this.#users.set(email, {
-      usedWords: 0,
-      lastCallAt: new Date(),
-    })
+    this.#users.set(email, {})
   }
 
-  getTokenUserEmail = (token: string) =>
-    new Promise((resolve, reject) =>
-      jwt.verify(token, config.get('auth.privateKey'), (err, decoded) => {
-        if (err) {
+  getTokenUser = async (token: string) => {
+    const email = await new Promise<string>((resolve, reject) =>
+      jwt.verify(token, config.get('auth.privateKey'), (err, _decoded) => {
+        const decoded = _decoded as { email?: string } | undefined
+        if (err || !decoded?.email) {
           return reject(err)
         }
-        return resolve(decoded)
+        return resolve(decoded.email)
       })
     )
-
-  isAuthenticated = (token: string) => this.getTokenUserEmail(token)
+    return {
+      email,
+      ...this.#users.get(email),
+    }
+  }
 
   getToken = (email: string) => {
     return jwt.sign({ email }, config.get('auth.privateKey'))
