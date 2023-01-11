@@ -1,6 +1,7 @@
 import { justifyController } from '#@/controllers/justify'
 import { tokenController } from '#@/controllers/token'
 import { authMiddleware } from '#@/middlewares/auth'
+import { errorMiddleware } from '#@/middlewares/error'
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 import KoaRouter from 'koa-router'
@@ -23,6 +24,7 @@ app
       enableTypes: ['json', 'text'],
     })
   )
+  .use(errorMiddleware)
   .use(router.routes())
   .use(router.allowedMethods())
 
