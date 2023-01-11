@@ -1,1 +1,1 @@
-export {justify} from './justify'
+export { justify } from './justify'
