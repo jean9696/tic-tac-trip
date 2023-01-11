@@ -2,7 +2,7 @@
 
 ## Description
 
-Small server written in Koa that follows the (instructions of the test.)[https://tictactrip.notion.site/Back-46162bfe474248f4b79672979efcc379]
+Small server written in Koa that follows the [instructions of the test.](https://tictactrip.notion.site/Back-46162bfe474248f4b79672979efcc379)
 
 ## Installation
     
