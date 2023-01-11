@@ -24,6 +24,9 @@
     "sourceRoot": "/",
     "baseUrl": ".",
     "outDir": "./dist",
+    "paths": {
+      "#@/*": ["./src/*"]
+    }
   },
   "exclude": [
     "./node_modules",
