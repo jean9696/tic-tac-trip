@@ -5,8 +5,8 @@ import { errorMiddleware } from '#@/middlewares/error'
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 import KoaRouter from 'koa-router'
+import {config} from '#@/config'
 
-const PORT = process.env.PORT ?? 3000
 
 const app = new Koa()
 const router = new KoaRouter({
@@ -32,6 +32,6 @@ export { app }
 export const runServer = () =>
   app
     .on('listening', () => {
-      console.log(`Listening on port ${PORT}`) // eslint-disable-line no-console
+      console.log(`Listening on port ${config.get('port')}`) // eslint-disable-line no-console
     })
-    .listen(PORT)
+    .listen(config.get('port'))
