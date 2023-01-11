@@ -29,7 +29,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@habx/eslint-config-service": "^2.3.0",
+    "@jean9696/eslint-config": "^8.0.0",
     "@types/convict": "^6.1.1",
     "@types/jest": "^29.2.5",
     "@types/jsonwebtoken": "^9.0.0",

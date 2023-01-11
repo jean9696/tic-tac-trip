@@ -6,7 +6,6 @@ import { justify } from '../../lib/justify'
 
 import { justifyController } from './justify.controller'
 
-
 const DEFAULT_CTX = {
   request: {
     header: { 'content-type': 'text/plain' },
@@ -21,8 +20,7 @@ describe('justify controller', () => {
   beforeEach(() => {
     config.set('justify.rateLimitByDay', 80_000)
     ctx = cloneDeep(DEFAULT_CTX)
-    jest
-      .useFakeTimers()
+    jest.useFakeTimers()
   })
   it('should return justified text if valid parameters', () => {
     justifyController(ctx, NEXT)
@@ -51,7 +49,7 @@ describe('justify controller', () => {
     ctx.token = 'uniq-token-time'
     ctx.request.body = new Array(6).fill('word').join(' ')
     expect(() => justifyController(ctx, NEXT)).not.toThrow()
-    jest.setSystemTime(new Date('2020-01-02'));
+    jest.setSystemTime(new Date('2020-01-02'))
     expect(() => justifyController(ctx, NEXT)).not.toThrow()
   })
 
