@@ -11,7 +11,7 @@ export class JustifyValidate {
   }
 
   public validate(token: string, words: number) {
-    if (dayjs(this.#lastCall).diff(dayjs(), 'days') > 1) {
+    if (dayjs(this.#lastCall).diff(dayjs(Date.now()), 'days') > 1) {
       this.#wordUsageByToken.clear()
     }
     const totalUsage = (this.#wordUsageByToken.get(token) ?? 0) + words

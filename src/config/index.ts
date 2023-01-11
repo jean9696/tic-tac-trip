@@ -1,6 +1,11 @@
 import convict from 'convict'
 
 export const config = convict({
+  env: {
+    doc: 'The application environment',
+    format: ['local', 'prod', 'test'],
+    default: 'local',
+  },
   port: {
     doc: 'The port to bind.',
     format: 'port',
@@ -21,3 +26,7 @@ export const config = convict({
     },
   },
 })
+
+config.loadFile(`${__dirname}/${config.get('env')}.json`)
+
+config.validate({ allowed: 'strict' })
