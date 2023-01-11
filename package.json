@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "start:dev": "node --experimental-specifier-resolution=node --watch --loader ts-node/esm src/index.ts",
     "lint": "eslint 'src/**/*.ts'",
     "test": "jest"
   },

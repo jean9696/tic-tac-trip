@@ -30,7 +30,6 @@ describe('justify', () => {
       `${__dirname}/__test_data__/short_lorem.txt`,
       'utf8'
     )
-    fs.writeFileSync('test.txt', justify(lorem, 80))
     justify(lorem, 80)
       .split('\n')
       .forEach((line, i, array) => {
