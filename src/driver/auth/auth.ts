@@ -1,4 +1,4 @@
-// TODO: migrate this to use a shared system between servince instances like redix
+// TODO: migrate this to use a shared system between servince instances like redis
 import { config } from '#@/config'
 import jwt from 'jsonwebtoken'
 
