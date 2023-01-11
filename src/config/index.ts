@@ -8,4 +8,10 @@ export const config = convict({
     env: 'PORT',
     arg: 'port',
   },
+  auth: {
+    privateKey: {
+      doc: 'The private key to sign JWT',
+      default: 'tic-tac-trip',
+    },
+  },
 })

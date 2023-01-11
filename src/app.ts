@@ -1,12 +1,12 @@
+import { config } from '#@/config'
 import { justifyController } from '#@/controllers/justify'
 import { tokenController } from '#@/controllers/token'
 import { authMiddleware } from '#@/middlewares/auth'
 import { errorMiddleware } from '#@/middlewares/error'
 import Koa from 'koa'
+import { bearerToken } from 'koa-bearer-token'
 import bodyParser from 'koa-bodyparser'
 import KoaRouter from 'koa-router'
-import {config} from '#@/config'
-
 
 const app = new Koa()
 const router = new KoaRouter({
@@ -15,6 +15,7 @@ const router = new KoaRouter({
 
 router
   .post('/token', tokenController)
+  .use(bearerToken())
   .use(authMiddleware)
   .post('/justify', justifyController)
 
