@@ -1,5 +1,3 @@
 import Koa from 'koa'
 
-export const justifyController: Koa.Middleware = () => {
-
-}
+export const justifyController: Koa.Middleware = () => {}

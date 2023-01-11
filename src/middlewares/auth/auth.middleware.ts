@@ -1,5 +1,3 @@
 import Koa from 'koa'
 
-export const authMiddleware: Koa.Middleware = () => {
-
-}
+export const authMiddleware: Koa.Middleware = () => {}

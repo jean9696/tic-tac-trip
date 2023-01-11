@@ -1,15 +1,15 @@
-import Koa from 'koa'
-import KoaRouter from 'koa-router'
-import bodyParser from 'koa-bodyparser'
 import { justifyController } from '#@/controllers/justify'
 import { tokenController } from '#@/controllers/token'
-import {authMiddleware} from '#@/middlewares/auth'
+import { authMiddleware } from '#@/middlewares/auth'
+import Koa from 'koa'
+import bodyParser from 'koa-bodyparser'
+import KoaRouter from 'koa-router'
 
 const PORT = process.env.PORT ?? 3000
 
 const app = new Koa()
 const router = new KoaRouter({
-  prefix: '/api'
+  prefix: '/api',
 })
 
 router
@@ -21,6 +21,7 @@ app
   .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods())
-  .listen(PORT).on('listening', () => {
-    console.log(`Listening on port ${PORT}`)
-})
+  .listen(PORT)
+  .on('listening', () => {
+    console.log(`Listening on port ${PORT}`) // eslint-disable-line no-console
+  })
