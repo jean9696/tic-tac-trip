@@ -22,7 +22,7 @@ describe('justify', () => {
     justify(lorem, 50)
       .split('\n')
       .forEach((line) => {
-        expect(line.length).toBeLessThanOrEqual(80)
+        expect(line.length).toBeLessThanOrEqual(50)
       })
   })
   it('should make each line the length of the given parameter except the last one', () => {
