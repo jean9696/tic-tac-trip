@@ -16,6 +16,6 @@ export const tokenController: Koa.Middleware = (ctx) => {
   }
   authDriver.addUser(requestBody.email)
   ctx.body = {
-    jwt: authDriver.getToken(requestBody.email),
+    token: authDriver.getToken(requestBody.email),
   }
 }
