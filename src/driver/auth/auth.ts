@@ -38,7 +38,7 @@ class AuthDriver {
   }
 
   getToken = (email: string) => {
-    return jwt.sign({ email }, config.get('auth.privateKey'))
+    return jwt.sign({ email, createdAt: Date.now() }, config.get('auth.privateKey'))
   }
 }
 

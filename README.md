@@ -27,6 +27,8 @@ Small server written in Koa that follows the [instructions of the test.](https:/
 
 Returns a token to be used in the other routes
 
+#### Limitations
+
 #### Body
 
 Content type: `application/json`
