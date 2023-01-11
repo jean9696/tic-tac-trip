@@ -30,7 +30,7 @@
   },
   "exclude": [
     "./node_modules",
-    "./src/tests",
+    "./tests",
     "./src/**/*.spec.ts",
     "./scripts"
   ]
