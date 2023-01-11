@@ -1,0 +1,16 @@
+.DS_Store
+node_modules
+dist
+coverage
+*.debug
+.env
+build.json
+version.txt
+scripts/config/*.json
+*.private.json
+*.backup
+.idea/
+schema.graphql
+.vscode/
+reports/
+.history/
