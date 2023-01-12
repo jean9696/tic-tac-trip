@@ -4,6 +4,7 @@
 
 Small server written in Koa that follows the [instructions of the test.](https://tictactrip.notion.site/Back-46162bfe474248f4b79672979efcc379)
 
+
 ## Installation
     
 ```bash
@@ -23,6 +24,8 @@ Small server written in Koa that follows the [instructions of the test.](https:/
 
 ## API
 
+Try it out: [https://tic-tac-trip.onrender.com](https://tic-tac-trip.onrender.com)
+
 ### POST /api/token
 
 Returns a token to be used in the other routes
@@ -33,17 +36,17 @@ Returns a token to be used in the other routes
 
 Content type: `application/json`
 
-```json
+```ts
 {
-  "email": string
+  email: string
 }
 ```
 
 Return
 
-```json
+```ts
 { 
-  "token": string
+  token: string
 }
 ```
 
