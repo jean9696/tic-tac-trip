@@ -11,8 +11,7 @@ describe('error middleware', () => {
   beforeEach(() => {
     ctx = cloneDeep(DEFAULT_CTX)
     // @ts-ignore
-    ctx.throw = jest.fn(() => {
-    })
+    ctx.throw = jest.fn(() => {})
   })
   it('should not throw if error is ServiceError', () => {
     expect(() =>
