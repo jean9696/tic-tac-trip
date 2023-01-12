@@ -1,3 +1,4 @@
+import { cloneDeep } from '#@/utils/clone'
 import { ParameterizedContext, Next } from 'koa'
 
 import { config } from '../../config'
@@ -13,7 +14,6 @@ const DEFAULT_CTX = {
   token: 'token',
 } as unknown as ParameterizedContext
 const NEXT = (() => {}) as Next
-const cloneDeep = (obj: any) => JSON.parse(JSON.stringify(obj))
 
 let ctx = cloneDeep(DEFAULT_CTX)
 describe('justify controller', () => {
