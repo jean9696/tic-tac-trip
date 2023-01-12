@@ -21,7 +21,6 @@
     "isolatedModules": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "sourceRoot": "/",
     "baseUrl": ".",
     "outDir": "./dist",
     "paths": {

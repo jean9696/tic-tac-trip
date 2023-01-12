@@ -8,6 +8,7 @@
     "#@/*": "./src/*"
   },
   "scripts": {
+    "build": "echo build",
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
     "start:dev": "node --experimental-specifier-resolution=node --watch --loader ts-node/esm src/index.ts",
     "lint": "eslint 'src/**/*.ts'",
@@ -25,8 +26,7 @@
     "koa": "^2.14.1",
     "koa-bearer-token": "^2.0.2",
     "koa-bodyparser": "^4.3.0",
-    "koa-router": "^12.0.0",
-    "lodash": "^4.17.21"
+    "koa-router": "^12.0.0"
   },
   "devDependencies": {
     "@jean9696/eslint-config": "^8.0.0",
@@ -40,6 +40,7 @@
     "@types/supertest": "^2.0.12",
     "eslint": "^8.31.0",
     "jest": "^29.3.1",
+    "lodash": "^4.17.21",
     "supertest": "^6.3.3",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
