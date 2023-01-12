@@ -17,12 +17,14 @@ export const config = convict({
     privateKey: {
       doc: 'The private key to sign JWT',
       default: 'tic-tac-trip',
+      env: 'AUTH_PRIVATE_KEY',
     },
   },
   justify: {
     rateLimitByDay: {
       doc: 'The number of words allowed per day',
       default: 80_000,
+      env: 'JUSTIFY_RATE_LIMIT_BY_DAY',
     },
   },
 })

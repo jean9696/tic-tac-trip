@@ -30,8 +30,6 @@ Try it out: [https://tic-tac-trip.onrender.com](https://tic-tac-trip.onrender.co
 
 Returns a token to be used in the other routes
 
-#### Limitations
-
 #### Body
 
 Content type: `application/json`
@@ -65,3 +63,14 @@ Returns a justified text with 80 characters per line.
 #### Body
 
 Content-type: `text/plain`
+
+
+## Configuration
+
+The configuration can be done through environment variables.
+
+| Name                      | Description                          | Default |
+|---------------------------|--------------------------------------|---------|
+| PORT                      | Port to listen to                    | 3000    |
+| AUTH_PRIVATE_KEY          | Private key used to sign the token   |         |
+| JUSTIFY_RATE_LIMIT_BY_DAY | Number of characters allowed per day | 80000   |
