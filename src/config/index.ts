@@ -27,6 +27,5 @@ export const config = convict({
   },
 })
 
-config.loadFile(`${__dirname}/${config.get('env')}.json`)
 
 config.validate({ allowed: 'strict' })
