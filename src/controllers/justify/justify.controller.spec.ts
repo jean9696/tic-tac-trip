@@ -1,5 +1,4 @@
 import { ParameterizedContext, Next } from 'koa'
-import { cloneDeep } from 'lodash'
 
 import { config } from '../../config'
 import { justify } from '../../lib/justify'
@@ -14,6 +13,7 @@ const DEFAULT_CTX = {
   token: 'token',
 } as unknown as ParameterizedContext
 const NEXT = (() => {}) as Next
+const cloneDeep = (obj: any) => JSON.parse(JSON.stringify(obj))
 
 let ctx = cloneDeep(DEFAULT_CTX)
 describe('justify controller', () => {
