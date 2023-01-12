@@ -52,6 +52,10 @@ Return
 
 Returns a justified text with 80 characters per line.
 
+### Authentication
+
+Requires a header:`Authorization: Bearer $token`
+
 ### Rate limit
 
 80 000 characters per day per token
